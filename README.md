@@ -33,6 +33,7 @@ drift-tolerant-fault-detection-part1/
 ├── requirements.txt     Python dependencies
 ├── sim/                 simulation checks (Table I, Figure 1)
 │   ├── vtwin_sim.py               core module: V-twin geometry, exact QP for E(k), oracle and rate-free scans
+│   ├── make_fig_vtwin.py          Figure 1: the V twin for r = 4w from the exact QP → fig_vtwin.png (deterministic)
 │   ├── row1_final.py              Table I row 1: exact nearest-normal-path QP vs. Lemma 1 (27 cases)
 │   │   → row1.json, row1_final.out
 │   ├── check_T3_templates.py      Table I row 1: templates identity w²‖v_{j,q}‖² = E(j), block length, efficiency η_F
