@@ -1,0 +1,45 @@
+TABLE A: delay law (calibrated threshold; detected runs; medians over runs; error = mean |log(measured/predicted)| per stream)
+
+pv / natural: streams 30, runs 4210, a/w median 0.50
+  k=1.5  det 0.96  delay   38.0  pred_eff   42.0  pred_margin   31.2  ratio_eff 0.99  ratio_margin 1.33
+  k=2.0  det 0.98  delay   28.0  pred_eff   30.9  pred_margin   23.8  ratio_eff 0.99  ratio_margin 1.29
+  k=3.0  det 0.99  delay   20.0  pred_eff   21.1  pred_margin   17.0  ratio_eff 0.99  ratio_margin 1.24
+  k=5.0  det 1.00  delay   13.0  pred_eff   13.7  pred_margin   11.5  ratio_eff 0.99  ratio_margin 1.18
+  k=10.0 det 1.00  delay    8.0  pred_eff    8.0  pred_margin    7.0  ratio_eff 0.98  ratio_margin 1.12
+  mean |log err|: eff 0.170, margin 0.259; margin - eff = +0.089 [+0.072, +0.105] (>0 favours r_eff)
+  runs with a/w >= 0.75: n=319, median ratio_eff 0.76, ratio_margin 1.01
+
+pv / worstbase: streams 30, runs 4169, a/w median 1.00
+  k=1.5  det 0.93  delay   54.0  pred_eff   61.3  pred_margin   41.8  ratio_eff 1.00  ratio_margin 1.49
+  k=2.0  det 0.96  delay   35.0  pred_eff   38.8  pred_margin   27.2  ratio_eff 1.01  ratio_margin 1.44
+  k=3.0  det 0.99  delay   22.0  pred_eff   23.2  pred_margin   17.1  ratio_eff 1.00  ratio_margin 1.35
+  k=5.0  det 0.99  delay   13.0  pred_eff   13.9  pred_margin   10.9  ratio_eff 0.99  ratio_margin 1.26
+  k=10.0 det 1.00  delay    7.0  pred_eff    7.7  pred_margin    6.4  ratio_eff 1.00  ratio_margin 1.20
+  mean |log err|: eff 0.201, margin 0.352; margin - eff = +0.151 [+0.129, +0.172] (>0 favours r_eff)
+  runs with a/w >= 0.75: n=3954, median ratio_eff 1.00, ratio_margin 1.31
+
+wind / natural: streams 50, runs 3006, a/w median 0.52
+  k=1.5  det 0.99  delay   15.0  pred_eff   19.1  pred_margin   14.2  ratio_eff 0.81  ratio_margin 1.10
+  k=2.0  det 1.00  delay   12.0  pred_eff   14.2  pred_margin   10.8  ratio_eff 0.85  ratio_margin 1.11
+  k=3.0  det 1.00  delay    8.0  pred_eff    9.6  pred_margin    7.7  ratio_eff 0.89  ratio_margin 1.12
+  k=5.0  det 1.00  delay    6.0  pred_eff    6.2  pred_margin    5.2  ratio_eff 0.92  ratio_margin 1.10
+  k=10.0 det 1.00  delay    3.0  pred_eff    3.6  pred_margin    3.1  ratio_eff 0.94  ratio_margin 1.07
+  mean |log err|: eff 0.337, margin 0.320; margin - eff = -0.017 [-0.037, +0.003] (>0 favours r_eff)
+  runs with a/w >= 0.75: n=214, median ratio_eff 0.74, ratio_margin 0.96
+
+wind / worstbase: streams 50, runs 2974, a/w median 1.00
+  k=1.5  det 0.94  delay   22.0  pred_eff   30.2  pred_margin   20.4  ratio_eff 0.78  ratio_margin 1.16
+  k=2.0  det 0.99  delay   15.0  pred_eff   18.6  pred_margin   13.1  ratio_eff 0.84  ratio_margin 1.20
+  k=3.0  det 1.00  delay   10.0  pred_eff   11.2  pred_margin    8.3  ratio_eff 0.90  ratio_margin 1.21
+  k=5.0  det 1.00  delay    6.0  pred_eff    6.7  pred_margin    5.3  ratio_eff 0.92  ratio_margin 1.17
+  k=10.0 det 1.00  delay    3.0  pred_eff    3.7  pred_margin    3.1  ratio_eff 0.95  ratio_margin 1.14
+  mean |log err|: eff 0.364, margin 0.369; margin - eff = +0.005 [-0.024, +0.033] (>0 favours r_eff)
+  runs with a/w >= 0.75: n=2849, median ratio_eff 0.89, ratio_margin 1.16
+
+TABLE B: blind spot and false alarms (natural base; alarm within the horizon)
+pv   theory     no fault 0.74  k=0.3 0.79  ramp 0.5w 0.87  (k0.3 - none) +0.05 [+0.01, +0.10] equivalent(+-0.10): False
+pv   calibrated no fault 0.18  k=0.3 0.32  ramp 0.5w 0.55  (k0.3 - none) +0.15 [+0.06, +0.24] equivalent(+-0.10): False
+pv   fixed-baseline scan, no fault: alarm rate 0.98
+wind theory     no fault 0.07  k=0.3 0.16  ramp 0.5w 0.25  (k0.3 - none) +0.09 [+0.03, +0.16] equivalent(+-0.10): False
+wind calibrated no fault 0.31  k=0.3 0.35  ramp 0.5w 0.49  (k0.3 - none) +0.04 [+0.01, +0.09] equivalent(+-0.10): True
+wind fixed-baseline scan, no fault: alarm rate 0.48
